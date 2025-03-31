@@ -1,0 +1,366 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom:0px;
+  margin-top:auto;
+}
+
+
+
+
+
+.dark-header {
+    background-color: white; /* Change to a darker color as needed */
+}
+.image {
+    height: 60px;
+    width: 60px;
+    border-radius:40px;
+}
+
+
+
+.wcu-section-container {
+    background-color: #f9fbfe;
+}
+
+.wcu-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.wcu-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 20px;
+}
+
+.wcu-card {
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5eaf4;
+    padding: 8px;
+}
+
+.image {
+    height: 90px;
+    width: 85px;
+}
+
+.card-heading {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 17px;
+}
+
+.offers {
+    color: #323f4b;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.delivery-and-payment-section {
+    background-color: white;
+}
+
+.delivery-and-payment-section-img {
+    width: 270px;
+}
+
+.delivery-and-payment-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.delivery-and-payment-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.payment-card-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 28px;
+}
+
+.custom-button {
+    color: white;
+    background-color: #d0b200;
+    width: 130px;
+    height: 45px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.bg-color{
+    background-color:black;
+}
+
+
+
+
+
+
+
+.nav-style{
+    position:sticky;
+    z-index:1000;
+    background-color:black;
+
+
+    
+}
+.foot-style {
+    position: sticky;
+   
+}
+
+.form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    max-width: 450px;
+    box-shadow: 0 5px 7px rgb(0,0,0,0.4);
+   
+}
+.food-form-container{
+    align-content:center;
+    justify-content:center;
+    display:flex;
+    animation:zoomOut 1.5s ease-in-out;
+    margin-bottom:10px;
+    margin-top:10px;  
+}
+
+@keyframes zoomOut {
+    from{
+        transform:scale(0);
+    }
+    to{
+        transform:scale(1);
+    }
+}
+.orderstate {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
+    animation: zoomOut 1.5s ease-in-out;
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+@keyframes zoomOut {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+.form-group {
+    padding: 4px 7px 2px 4px;
+}
+.check{
+    height:5px;
+    width:6px;
+}
+.carousel img{
+    width:50%;
+    height:400px;
+    margin-top:20px;
+    margin-bottom:20px;
+    
+   
+}
+.carousel-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius:15px;
+}
+.carousel{
+    position:relative;
+    z-index:1;
+}
+
+.card {
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 10px;
+    height: 30vh;
+    width: 25vw;
+}
+.Product-image{
+    height:30vh;
+    width:25vw;
+}
+
+
+/* File: wwwroot/css/site.css */
+
+/* Cart table styles */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+    .cart-table th, .cart-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+
+    .cart-table th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .cart-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .cart-table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .cart-table .btn {
+        margin-right: 5px;
+    }
+
+
+
+/* File: wwwroot/css/site.css */
+
+/* Orders table styles */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+    .orders-table th, .orders-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+
+    .orders-table th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .orders-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .orders-table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .orders-table .btn {
+        margin-right: 5px;
+    }
+
+
+
+/* Payment options styles */
+.payment-options {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+    .payment-options select {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+
+/* File: wwwroot/css/site.css */
+
+/* Order state styles */
+.orderstate {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+    .orderstate table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .orderstate th, .orderstate td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+
+    .orderstate th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .orderstate tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .orderstate tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .orderstate h1, .orderstate h3 {
+        color: #333;
+        margin-top: 20px;
+    }
+
+    .orderstate h1 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .orderstate h3 {
+        font-size: 20px;
+    }
+
+

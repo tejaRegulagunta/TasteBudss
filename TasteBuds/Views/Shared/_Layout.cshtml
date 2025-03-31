@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TasteBuds</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TasteBuds.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="p-3 text-bg-dark dark-header nav-style">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/image5.jpg" class="image" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Choose" asp-action="AddChooseSection">WhyChooseUs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="DeliveryAndPayment" asp-action="AddDeliveryAndPayment">Delivery&Payment</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Product" asp-action="Index">Products</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Cart" asp-action="Index">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                                    </svg> Cart
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <form class="d-flex mr-1" role="search" id="searchForm">
+                        <input type="search" class="form-control me-2" id="searchInput" placeholder="Search..." aria-label="Search">
+                        <button type="button" class="btn btn-outline-success text-white" id="searchButton">Search</button>
+                    </form>
+
+                    @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <div class="text-end">
+                            <a asp-controller="UserManagement" asp-action="Logout" class="btn btn-primary me-2">Logout</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-end">
+                            <a asp-area="" asp-controller="UserManagement" asp-action="Login" class="btn btn-outline-light me-2 ml-2">Login</a>
+                            <a asp-area="" asp-controller="UserManagement" asp-action="Register" class="btn btn-primary">Sign Up</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

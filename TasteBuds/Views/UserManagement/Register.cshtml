@@ -1,0 +1,42 @@
+﻿@model TasteBuds.Models.RegisterPage
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="food-form-container">
+
+    <form method="post" class="form" asp-controller="UserManagement" asp-action="Register">
+
+        <h3>Register Now</h3>
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <div class="form-group">
+            <label html-for="Name">Name:</label>
+            <input type="text" asp-for="Name" name="Name" id="Name" value="@Model.Name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label html-for="Email">Email:</label>
+            <input type="email" asp-for="Email" name="Email" id="Email" value="@Model.Email" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label html-for="Password">Password:</label>
+            <input type="password" asp-for="Password" name="Password" id="Password" value="@Model.Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label html-for="ConfirmPassword">Confirm Password:</label>
+            <input type="password" asp-for="ConfirmPassword" name="ConfirmPassword" id="ConfirmPassword" value="@Model.ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary">Register</button>
+        </div>
+
+    </form>
+
+</div>
